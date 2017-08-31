@@ -35,6 +35,9 @@ As the site will allow for multiple users to create their own recipes, the datab
 - Allow the user to perform **CRUD operations on their recipes**.
 - Also allow guest *(visitors who have are not logged in)* to view all recipes with seacrhing functionality.
 
+**Database mockup**
+![Mockup of sample DB](./readme-assets/database_mockup.jpg)
+
 
 <br>
 

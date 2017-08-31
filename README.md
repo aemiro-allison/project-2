@@ -67,9 +67,9 @@ date_created | timestamp
 #### The User Interface
 Other than the CRUD operations that a user can perform on their smoothie recpies, a user, or guest, should be able to search and filter to find a smoothie recipe. The user interface will follow a wireframe which encompasses all these functions plus the search functionality. The following wireframes were used to:
 
-[Full picture of wireframe](./readme-assets/full-wireframe.jpg)
-[Guest user story](./readme-assets/guest-user-story.jpg)
-[Logged-in user story](./readme-assets/logged-in-user-story.jpg)
+![Full picture of wireframe](./readme-assets/full-wireframe.jpg)
+![Guest user story](./readme-assets/guest-user-story.jpg)
+![Logged-in user story](./readme-assets/logged-in-user-story.jpg)
 
 
 

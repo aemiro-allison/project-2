@@ -144,6 +144,10 @@ button, input {
   font-size: 1.1rem;
 }
 
+input[type="number"] {
+  width: 3rem;
+}
+
 nav {
   list-style: none;
 }
@@ -197,7 +201,7 @@ nav {
   overflow: hidden;
 }
 
-#menu-view, #search-view {
+#menu-view, #search-view, #ingredients-view {
   position: fixed;
   z-index: 1;
   width: 100%;
@@ -210,6 +214,11 @@ nav {
 
 .footer {
   background: #222;
+}
+
+.ingredients {
+  width: 360px;
+  margin: 1rem auto;
 }
 
 

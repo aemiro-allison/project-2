@@ -1,11 +1,12 @@
 /*
 For Dynamic Views, create:
 
-a navbar component
-a search component
-a window component
-a window footer component
-a window body component
+TODO: handle edit and create views.
+TODO components and js: ingredients, user profile, editing 2hrs forms
+TODO: fix up CSS and make responsive. 2hrs
+TODO: make AJAX requests for ingredients
+TODO: implment customized search.
+TODO: deploy to heroku.
 
 */
 
@@ -83,6 +84,74 @@ const views = {
 </div>
 
   </div>
+  `,
+
+  ingredients: `
+  <!-- Ingredients Pane -->
+  <div class="box column">
+    <div class="row to-middle">
+      <form>
+        <div class="row add-margin-2y">
+          <input type="number" value="1">
+          <input type="text" placeholder="Find a ingredient" />
+          <button type="submit">SEARCH</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Image of Ingredient -->
+  <figure class="image to-middle add-margin-3y">
+    <img src="http://www.eatwell101.com/wp-content/uploads/2016/10/apple-banana-smoothie-recipes-.jpg" alt="">
+  </figure>
+
+    <!-- Nutrtional Values Component -->
+  <div class="column add-margin-y">
+    <div class="row to-center">
+      <div class="box">
+        <div class="row">
+          <span class="add-padding">label</span>
+          <input type="range" value="10" min="0" max="2000" disabled>
+        </div>
+        <div class="row">
+          <span class="add-padding">label</span>
+          <input type="range" value="10" min="0" max="2000" disabled>
+        </div>
+        <div class="row">
+          <span class="add-padding">label</span>
+          <input type="range" value="10" min="0" max="2000" disabled>
+        </div>
+        <div class="row">
+          <span class="add-padding">label</span>
+          <input type="range" value="10" min="0" max="2000" disabled>
+        </div>
+      </div>
+    </div>
+  </div>
+
+      <div class="column box ingredients">
+      <button class="add-margin-y">ADD INGREDIENT</button>
+      <div class="row">
+        <div>
+          <input type="number" value="1">
+        </div>
+        <div class="row-item row">
+          <span class="add-padding">carrot</span>
+          <div class="to-right">
+            <span class="add-margin-x">330cal</span>
+            <span class="add-margin-x">90g</span>
+            <span class="add-margin-x">4mins</span>
+          </div>
+        </div>
+        <div>
+          <span class="icon">
+            <i class="fa fa-close"></i>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row add-margin-3y"></div>
   `,
 };
 

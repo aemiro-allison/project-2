@@ -5,9 +5,216 @@ body,html {
   background: #eee;
   font-family: 'Roboto', sans-serif;
   position: relative;
+  color: #000;
+}
+
+h1,h2,h3,h4 {
+  line-height: 0.8rem;
+}
+
+button, i {
+  cursor: pointer;
+}
+
+.title {
+  font-size: 1.5rem;
+}
+
+.subtitle {
+  font-size: 1rem;
+}
+
+.caption {
+  font-size: 0.9rem;
+}
+
+.to-large {
+  font-size: 1.2rem;
+  line-height: 1.4rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.box {
+  background: #fff;
+  border: 0.01rem solid #e4e4e4;
+  box-shadow: 0px 1px 0.8rem 0.05rem rgba(0,0,0,0.05);
+  padding: 0.8rem;
+}
+
+.row {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+}
+
+.row-item {
+  flex: 1;
+}
+
+.column {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.add-padding {
+  padding: 1rem;
+}
+.add-padding-2 {
+  padding: 2rem;
 }
 
 
+.lose-padding {
+  padding: 0;
+}
+
+.lose-margin {
+  margin: 0;
+}
+
+.lose-shadow {
+  box-shadow: 0;
+}
+
+.add-margin-y {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.add-margin-2y {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.add-margin-3y {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+
+.add-margin-x {
+  margin-left: 1rem;
+  /*margin-right: 1rem;*/
+}
+.add-margin-2x {
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+.to-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.to-middle {
+  display: flex;
+  justify-content: center;
+}
+
+.text-to-center {
+  text-align: center;
+}
+
+.to-right {
+  margin-left: auto;
+}
+
+.wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.icon {
+  padding: 0.7rem;
+}
+
+button, input {
+  padding: 0.8rem 0.5rem;
+  border: 0.1rem solid #ccc;
+  background: #f4f4f4;
+  font-size: 1.1rem;
+}
+
+nav {
+  list-style: none;
+}
+
+.nav-item {
+  height: 2rem;
+}
+
+.nav-item > a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.image {
+  margin:0 auto;
+  overflow: hidden;
+}
+
+.image img {
+  display: block;
+  width: 20rem;
+  height: 20rem;
+  overflow: hidden;
+}
+
+.card {
+  width: 22rem;
+  overflow: hidden;
+}
+
+.to-fixed {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+
+.to-fullheight {
+  height: 66.7vh;
+}
+
+.hidden {
+  display: none;
+}
+
+.to-allow-overflow {
+  overflow: scroll;
+}
+
+.to-hide {
+  overflow: hidden;
+}
+
+#menu-view, #search-view {
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+  animation-duration: 0.4s;
+  animation-timing-function: ease;
+  background: #555;
+}
+
+.footer {
+  background: #222;
+}
+
+
+
+/* App Styles */
 
 
 

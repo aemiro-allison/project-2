@@ -5,7 +5,7 @@ const smoothieController = {};
 smoothieController.list = (req, res) => {
   Smoothie.findAll()
     .then((smoothies) => {
-      res.json({ smoothies });
+      res.render('index', { data: smoothies });
     })
     .catch((err) => {
       console.log(err);

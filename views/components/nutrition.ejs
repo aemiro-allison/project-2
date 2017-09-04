@@ -1,0 +1,13 @@
+<!-- Nutrtional Values Component -->
+<div class="column add-margin-3y">
+  <div class="row to-center">
+    <div class="box">
+    <% for (let label in smoothie.nutrition) { %>
+      <div class="row">
+        <span class="add-padding"><%= label %></span>
+        <input type="range" value="<%= smoothie.nutrition[label] %>" min="0" max="800" disabled>
+      </div>
+    <% } %>
+    </div>
+  </div>
+</div>

@@ -1,14 +1,37 @@
 /*
 For Dynamic Views, create:
 
-TODO: handle edit and create views.
 TODO components and js: ingredients, user profile, editing 2hrs forms
+TODO: SEARCH INGREDIENT DATA FROM API and get appriopate fields
+TODO: ADD,VIEW,REMOVE, UPDATE INGREDIENTS
+
 TODO: fix up CSS and make responsive. 2hrs
 TODO: make AJAX requests for ingredients
-TODO: implment customized search.
 TODO: deploy to heroku.
 
 */
+
+const createIngredientsList = ingredients => {
+  return Object.keys(ingredients).map((key) => `
+    <div class="row">
+        <div>
+          <input type="number" value="${ingredients[key].quantity}">
+        </div>
+        <div class="row-item row">
+          <span class="add-padding">${key}</span>
+          <div class="to-right">
+            <span class="add-margin-x">${ingredients[key].calories}cal</span>
+            <span class="add-margin-x">${ingredients[key].protein}g</span>
+          </div>
+        </div>
+        <div>
+          <span class="icon">
+            <i class="fa fa-close"></i>
+          </span>
+        </div>
+      </div>
+    `);
+};
 
 const views = {
   menu: `
@@ -86,7 +109,7 @@ const views = {
   </div>
   `,
 
-  ingredients: `
+  ingredients: data.ingredients? (`
   <!-- Ingredients Pane -->
   <div class="box column">
     <div class="row to-middle">
@@ -130,29 +153,12 @@ const views = {
 
       <div class="column box ingredients">
       <button class="add-margin-y">ADD INGREDIENT</button>
-      <div class="row">
-        <div>
-          <input type="number" value="1">
-        </div>
-        <div class="row-item row">
-          <span class="add-padding">carrot</span>
-          <div class="to-right">
-            <span class="add-margin-x">330cal</span>
-            <span class="add-margin-x">90g</span>
-            <span class="add-margin-x">4mins</span>
-          </div>
-        </div>
-        <div>
-          <span class="icon">
-            <i class="fa fa-close"></i>
-          </span>
-        </div>
-      </div>
+      ${createIngredientsList(data.ingredients)}
     </div>
   </div>
 
   <div class="row add-margin-3y"></div>
-  `,
+  `) : '',
 };
 
 function fill(name, content) {
@@ -166,7 +172,8 @@ function fill(name, content) {
 
   const bottom = `
     <div class="footer row add-padding to-center to-fixed">
-      <button class="${name}-close">BACK</button>
+      <button class="save">SAVE</button>
+      <button class="${name}-close add-margin-x">BACK</button>
     </div>
   `;
 

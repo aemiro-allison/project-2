@@ -14,4 +14,10 @@ $(document).ready(() => {
   menuView.setListeners($('.menu-close').add('.menu-open'));
   searchView.setListeners($('.search-close').add('.search-open'));
   ingredientsView.setListeners($('.ingredients-close').add('.ingredients-open'));
+
+  addIngredients();
 });
+
+function addIngredients() {
+  console.log(data.ingredients);
+}

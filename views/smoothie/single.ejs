@@ -1,0 +1,26 @@
+<% include ../partials/header %>
+
+<div class="container add-margin-3y">
+
+<!-- Heading -->
+<h1 class="to-center text-to-center"><%= smoothie.title %></h1>
+<p class="text-to-center">made by <strong><%= smoothie.name %></strong> on 08/2017</p>
+
+<% include ../components/nutrition %>
+<% include ../components/ingredients %>
+
+
+<div class="row to-center add-margin-2y">
+  <button class="ingredients-open">VIEW INGREDIENTS</button>
+</div>
+
+<!-- Image of Smoothie -->
+<figure class="image to-middle add-margin-3y">
+  <img src="http://www.eatwell101.com/wp-content/uploads/2016/10/apple-banana-smoothie-recipes-.jpg" alt="">
+</figure>
+
+<% include ../components/recipe %>
+
+</div>
+
+<% include ../partials/footer %>

@@ -1,5 +1,6 @@
-<% for (let smoothie of data) { %>
+<% for (let smoothie of smoothies) { %>
   <!-- Smoothie -->
+  <a class="smoothie" href="/smoothies/<%= smoothie.id %>">
   <div class="column box lose-padding lose-shadow card add-margin-x add-margin-y">
     <div class="row box wrap">
       <span class="title"><%= smoothie.title %></span>
@@ -8,9 +9,10 @@
     </div>
     <figure class="image"><img src="http://www.eatwell101.com/wp-content/uploads/2016/10/apple-banana-smoothie-recipes-.jpg" alt=""></figure>
     <div class="row box text-to-center">
-      <div class="row-item">330cal</div>
-      <div class="row-item">90g</div>
-      <div class="row-item">4mins</div>
+      <div class="row-item"><%= smoothie.nutrition.calories %></div>
+      <div class="row-item"><%= smoothie.nutrition.protein %></div>
+      <div class="row-item"><%= smoothie.nutrition.prep_time %></div>
     </div>
   </div>
+  </a>
 <% } %>

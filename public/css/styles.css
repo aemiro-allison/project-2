@@ -2,11 +2,14 @@ body,html {
   margin: 0;
   height: 100%;
   width: 100%;
-  background: #eee;
-  font-family: 'Roboto', sans-serif;
+  /*background: ;*/
+   background: linear-gradient(to right, #e53935, #e35d5b);
+  font-family: 'Lato', sans-serif;
   position: relative;
-  color: #000;
+  color: #fff;
 }
+
+
 
 h1,h2,h3,h4 {
   line-height: 0.8rem;
@@ -38,12 +41,16 @@ button, i {
 }
 
 .container {
-  width: 80%;
-  margin: 0 auto;
+  width:  90%;
+  margin: 5% auto;
+  justify-content: space-around;
 }
 
+
 .box {
+  border-radius: 6px;
   background: #fff;
+  color: #444;
   border: 0.01rem solid #e4e4e4;
   box-shadow: 0px 1px 0.8rem 0.05rem rgba(0,0,0,0.05);
   padding: 0.8rem;
@@ -141,14 +148,50 @@ button, i {
 
 button, input {
   padding: 0.8rem 0.5rem;
-  border: 0.1rem solid #ccc;
-  background: #f4f4f4;
+  border: 0.025rem solid #ccc;
+  background: #fff;
   color: #000;
   font-size: 1.1rem;
 }
 
 input[type="number"] {
   width: 4rem;
+  color: dodgerblue;
+  border: 0;
+  text-align: center;
+  background: #444;
+  border-radius: 4px;
+}
+
+.nutrition, .ingredients {
+  background: #222;
+  color: #f1f1f1;
+  border: 0;
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  padding: 0;
+  height: 0.25rem;
+  background: #555;
+  outline: 0;
+  border:0;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 0.75rem;
+  border-radius: 0.275rem;
+  height: 0.75rem;
+  background: dodgerblue;
+}
+
+
+button[type="submit"], #add-ingredient {
+  background: #B7F714;
+  color: #444;
+  font-weight: bold;
+  text-shadow: 0px 1px 2px rgba(0,0,0,0.1);
 }
 
 nav {
@@ -157,6 +200,9 @@ nav {
 
 a {
   text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  color: #B7F714;
 }
 
 .nav-item {
@@ -164,8 +210,10 @@ a {
 }
 
 .nav-item > a {
+  padding: 0.5rem;
   text-decoration: none;
-  color: #fff;
+  color: #aaa;
+  font-weight: bold;
 }
 
 .image {
@@ -175,7 +223,7 @@ a {
 
 .image img {
   display: block;
-  width: 20rem;
+  width: 22rem;
   height: 20rem;
   overflow: hidden;
 }
@@ -240,9 +288,19 @@ a {
   opacity: 0.96;
 }
 
+.smoothie {
+  color: #000;
+}
+
 .smoothie:hover {
   transform: translateY(-2px) scale(1.025);
   opacity: 1;
+}
+
+#prep-time {
+  background: #fff;
+  color: #000;
+  border: 0.1rem solid #ccc;
 }
 
 @media only screen and (min-width: 768px) {
@@ -254,10 +312,18 @@ a {
     display: block;
   }
 
+  a {
+    color: #B7F714;
+  }
+
   .nav-item > a {
     text-decoration: none;
-    color: #000;
-}
+    color: #fff;
+  }
+
+  .container {
+    width: 80%;
+  }
 }
 
 

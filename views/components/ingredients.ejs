@@ -18,7 +18,7 @@
   </figure>
 
     <div class="column box ingredients">
-      <button onclick="addIngredient()" class="add-margin-y">ADD INGREDIENT</button>
+      <button id="add-ingredient" onclick="addIngredient()" class="add-margin-y">ADD INGREDIENT</button>
         <% Object.keys(data.smoothie? data.smoothie.ingredients : {}).map((key) => {%>
           <div class="row">
             <div>

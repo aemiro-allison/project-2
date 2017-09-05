@@ -22,7 +22,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(methodOverride('_method'));
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.get('/', (req, res) => res.send('<h1>Index page</h1>'));
+app.get('/', (req, res) => res.redirect('/smoothies'));
 
 app.get('/api/ingredient', (req, res) => {
   const URL = 'https://trackapi.nutritionix.com/v2/natural/nutrients';

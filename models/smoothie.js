@@ -22,7 +22,7 @@ Smoothie.create = smoothie =>
     VALUES
     ($/user_id/, $/title/, $/ingredients/, $/nutrition/, $/instructions/)`, smoothie);
 
-Smoothie.update = (smoothie) =>
+Smoothie.update = smoothie =>
   db.none(`
     UPDATE ${smoothieTable} SET
 

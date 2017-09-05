@@ -14,11 +14,11 @@
 <% if (data.user) { %>
 <div class="row to-center">
   <button>
-    <a href="/users/<%= data.smoothie.user_id %>/smoothie/edit/<%= data.smoothie.id %>">
+    <a href="/users/<%= data.smoothie.user_id %>/smoothie/edit/<%= data.smoothie.id %>" style="color:#000;">
       EDIT
     </a>
   </button>
-  <button id="delete">DELETE</button>
+  <button id="delete" style="color:#000; font-weight:bold;">DELETE</button>
 </div>
 <% } %>
 

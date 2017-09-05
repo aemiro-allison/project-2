@@ -6,13 +6,14 @@
   <title>Set title</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
   <link rel="stylesheet" href="/css/styles.css">
 </head>
 <script type="text/javascript">
   let data = {
     user: <%- data.user? JSON.stringify(data.user) : "{}" %>,
     smoothie: <%- data.smoothie? JSON.stringify(data.smoothie) : "{}" %>,
-    URL: <%- process.env.PORT? `'http://localhost:${process.env.PORT}'` : ''  %>
+    URL: <%- process.env.PORT? `'http://localhost:${process.env.PORT}'` : 'false'  %>,
   };
 </script>
 <body>

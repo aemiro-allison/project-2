@@ -1,7 +1,3 @@
-CREATE DATABASE build_a_smoothie;
-
-\c build_a_smoothie;
-
 DROP TABLE IF EXISTS smoothies;
 DROP TABLE IF EXISTS users;
 

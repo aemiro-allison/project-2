@@ -1,4 +1,3 @@
-\c build_a_smoothie;
 
 INSERT INTO smoothies (user_id, title, ingredients, nutrition, instructions)
 VALUES

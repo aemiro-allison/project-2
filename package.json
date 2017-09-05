@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "setup": "psql -f ./db/migrations/migration08312017.sql && (cd ./db/seeds; psql -f seed.sql;)",
+    "db": "psql -f ./db/migrations/migration08312017.sql",
     "destroy": "dropdb build_a_smoothie",
     "dev": "nodemon server.js",
     "start": "npm install --production && node server.js"

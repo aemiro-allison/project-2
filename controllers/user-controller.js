@@ -3,7 +3,7 @@ const Smoothie = require('../models/smoothie');
 
 const userController = {};
 
-userController.list = (req, res) => {
+userController.list = (req, res, next) => {
   User.findAll()
     .then((users) => {
       res.json({ users });
@@ -11,7 +11,7 @@ userController.list = (req, res) => {
     .catch(next);
 };
 
-userController.show = (req, res) => {
+userController.show = (req, res, next) => {
   User.findOne(req.params.id)
     .then((user) => {
       res.locals.user = user;
@@ -31,7 +31,7 @@ userController.show = (req, res) => {
     .catch(next);
 };
 
-userController.showItem = (req, res) => {
+userController.showItem = (req, res, next) => {
   Promise.all([
     User.findOne(req.params.user_id),
     Smoothie.findOne(req.params.smoothie_id),
@@ -47,7 +47,7 @@ userController.showItem = (req, res) => {
     .catch(next);
 };
 
-userController.showCreate = (req, res) => {
+userController.showCreate = (req, res, next) => {
   User.findOne(req.params.user_id)
   .then((user) => {
     user.isLoggedIn = true;
@@ -58,7 +58,7 @@ userController.showCreate = (req, res) => {
   .catch(next);
 }
 
-userController.showEdit = (req, res) => {
+userController.showEdit = (req, res, next) => {
   Promise.all([
     User.findOne(req.params.user_id),
     Smoothie.findOne(req.params.smoothie_id),

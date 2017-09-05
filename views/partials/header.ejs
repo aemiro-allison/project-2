@@ -12,6 +12,7 @@
   let data = {
     user: <%- data.user? JSON.stringify(data.user) : "{}" %>,
     smoothie: <%- data.smoothie? JSON.stringify(data.smoothie) : "{}" %>,
+    URL: <%- process.env.PORT? `'http://localhost:${process.env.PORT}'` : ''  %>
   };
 </script>
 <body>

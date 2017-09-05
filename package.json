@@ -1,6 +1,6 @@
 {
   "name": "project-2",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "### Description",
   "main": "server.js",
   "scripts": {
@@ -8,11 +8,14 @@
     "setup": "psql -f ./db/migrations/migration08312017.sql && (cd ./db/seeds; psql -f seed.sql;)",
     "destroy": "dropdb build_a_smoothie",
     "dev": "nodemon server.js",
-    "start": "node server.js"
+    "start": "npm install --production && node server.js"
   },
   "repository": {
     "type": "git",
     "url": "git@git.generalassemb.ly:aemiro-allison/project-2.git"
+  },
+  "engines": {
+    "node": "8.2.1"
   },
   "keywords": [],
   "author": "",

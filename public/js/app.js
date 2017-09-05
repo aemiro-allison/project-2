@@ -3,6 +3,7 @@ let $els = null;
 let ingredients = data.smoothie.ingredients || {};
 let tempIngredient = {};
 let tempIngredientName = null;
+let URL = data.URL || `http://localhost:3000`;
 
 $(document).ready(() => {
   $els = {
@@ -37,11 +38,10 @@ $(document).ready(() => {
     $.ajax({
       method: 'POST',
       data: getSmoothieData(ingredients),
-      url: data.url || `http://localhost:3000/smoothies`,
-    }).done((data) => {
-      if (data.redirect && typeof data.redirect === 'string' ) {
-        if (data.redirect === 'back') window.history.back();
-        window.location = data.redirect;
+      url: `${URL}/smoothies`,
+    }).done((res) => {
+      if (res.redirect && typeof res.redirect === 'string' ) {
+        window.location = res.redirect;
       }
     });
   });
@@ -50,11 +50,10 @@ $(document).ready(() => {
     $.ajax({
       method: 'POST',
       data: getSmoothieData(ingredients),
-      url: `http://localhost:3000/smoothies/${data.smoothie.id}?_method=PUT`,
-    }).done((data) => {
-      if (data.redirect && typeof data.redirect === 'string' ) {
-        if (data.redirect === 'back') window.history.back();
-        window.location = data.redirect;
+      url: `${URL}/smoothies/${data.smoothie.id}?_method=PUT`,
+    }).done((res) => {
+      if (res.redirect && typeof res.redirect === 'string' ) {
+        window.location = res.redirect;
       }
     });
   });
@@ -62,11 +61,12 @@ $(document).ready(() => {
   $els.$deleteSmoothie.on('click', (evt) => {
     $.ajax({
       method: 'POST',
-      url: `http://localhost:3000/smoothies/${data.smoothie.id}?_method=DELETE`,
-    }).done((data) => {
-      if (data.redirect && typeof data.redirect === 'string' ) {
-        if (data.redirect === 'back') window.history.back();
-        window.location = data.redirect;
+      url: `${URL}/smoothies/${data.smoothie.id}?_method=DELETE`,
+    }).done((res) => {
+      if (res.redirect && typeof res.redirect === 'string' ) {
+        window.location = res.redirect;
+      } else {
+        window.location = `${URL}/users/${data.user.user_id}`;
       }
     });
   })
@@ -155,7 +155,7 @@ function updateSmoothieData(ingredient) {
 // make api request
 function getIngredient(food, qty = 1) {
   // make api request
-  fetch(`http://localhost:3000/api/ingredient?food=${food}&qty=${qty}`)
+  fetch(`${URL}/api/ingredient?food=${food}&qty=${qty}`)
     .then((response) => {
       return response.json();
     })

@@ -2,7 +2,7 @@ const Smoothie = require('../models/smoothie');
 
 const smoothieController = {};
 
-smoothieController.list = (req, res) => {
+smoothieController.list = (req, res, next) => {
   Smoothie.findAll()
     .then((smoothies) => {
       res.render('index', {
@@ -12,7 +12,7 @@ smoothieController.list = (req, res) => {
     .catch(next);
 };
 
-smoothieController.find = (req, res) => {
+smoothieController.find = (req, res, next) => {
   Smoothie.findAll(`
     SELECT * FROM smoothies
     JOIN users ON users.user_id = smoothies.user_id
@@ -28,7 +28,7 @@ smoothieController.find = (req, res) => {
     .catch(next);
 };
 
-smoothieController.show = (req, res) => {
+smoothieController.show = (req, res, next) => {
   Smoothie.findOne(req.params.id)
     .then((smoothie) => {
       res.render('smoothie/single', {
@@ -38,7 +38,7 @@ smoothieController.show = (req, res) => {
     .catch(next);
 };
 
-smoothieController.create = (req, res) => {
+smoothieController.create = (req, res, next) => {
   const {user_id, title, ingredients, nutrition, instructions } = req.body;
   console.log(req.body);
   Smoothie.create({
@@ -54,7 +54,7 @@ smoothieController.create = (req, res) => {
     .catch(next);
 };
 
-smoothieController.update = (req, res) => {
+smoothieController.update = (req, res, next) => {
   const {user_id, title, ingredients, nutrition, instructions } = req.body;
 
   Smoothie.update({
@@ -71,10 +71,10 @@ smoothieController.update = (req, res) => {
     .catch(next);
 };
 
-smoothieController.destroy = (req, res) => {
+smoothieController.destroy = (req, res, next) => {
   Smoothie.destroy(req.params.id)
     .then(() => {
-      res.status(200).json({ redirect: 'back' });
+      res.status(200).json({ redirect: '' });
     })
     .catch(next);
 };

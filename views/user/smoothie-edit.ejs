@@ -1,0 +1,62 @@
+<% include ../partials/header %>
+
+<div class="container add-margin-3y">
+
+<!-- Heading -->
+<h1 class="to-center text-to-center">Build a Smoothie!</h1>
+<p class="text-to-center">Create the smoothie of your dreams.</p>
+
+<div class="add-margin-3y">
+  <div class="row box">
+    <span class="add-padding">Title:</span>
+    <input id="title" type="text" value="<%= data.smoothie.title %>" placeholder="your smoothie's name goes here" autofocus>
+    <div class="row-item to-right">
+      <span class="add-padding">Prep-time:</span>
+      <input id="prep-time" type="number" value="<%= data.smoothie.nutrition.prep_time %>">
+      <span class="add-padding">mins</span>
+    </div>
+  </div>
+</div>
+
+<% include ../components/ingredients %>
+
+<!-- Nutrtional Values Component -->
+<div class="column add-margin-3y">
+  <p class="text-to-center">Nutrition values for this smoothie</p>
+  <div class="row to-center">
+    <div class="box">
+      <div class="row">
+        <span class="add-padding">protein</span>
+        <input id="protein" type="range" value="<%= data.smoothie.nutrition.protein%>" min="0" max="2000" disabled>
+      </div>
+      <div class="row">
+        <span class="add-padding">calories</span>
+        <input id="calories" type="range" value="<%= data.smoothie.nutrition.calories%>" min="0" max="2000" disabled>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Image of Smoothie -->
+<figure class="image to-middle add-margin-3y">
+  <img src="http://www.eatwell101.com/wp-content/uploads/2016/10/apple-banana-smoothie-recipes-.jpg" alt="">
+</figure>
+
+<div class="column to-center add-margin-3y">
+  <h3 class="lose-margin">Recipe</h3>
+  <p>Give instructions on how to make this smoothie</p>
+
+  <textarea id="instructions" rows="15" class="row box add-padding-2" style="font-size: 0.9rem">
+    <%= data.smoothie.instructions %>
+  </textarea>
+</div>
+
+<div class="row add-margin-3y"></div>
+
+<!-- SAVE FOOTER -->
+<div class="row to-middle to-fixed box">
+  <p class="add-padding">Save Changes</p>
+  <button id="save">EDIT SMOOTHIE</button>
+</div>
+
+<% include ../partials/footer %>

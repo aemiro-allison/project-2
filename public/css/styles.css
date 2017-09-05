@@ -126,6 +126,8 @@ button, i {
 
 .to-right {
   margin-left: auto;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .wrap {
@@ -141,6 +143,7 @@ button, input {
   padding: 0.8rem 0.5rem;
   border: 0.1rem solid #ccc;
   background: #f4f4f4;
+  color: #000;
   font-size: 1.1rem;
 }
 
@@ -150,6 +153,10 @@ input[type="number"] {
 
 nav {
   list-style: none;
+}
+
+a {
+  text-decoration: none;
 }
 
 .nav-item {
@@ -201,7 +208,17 @@ nav {
   overflow: hidden;
 }
 
-#menu-view, #search-view, #ingredients-view {
+.footer {
+  background: #222;
+}
+
+.ingredients {
+  width: 360px;
+  margin: 1rem auto;
+}
+
+#menu-view {
+  display: none;
   position: fixed;
   z-index: 1;
   width: 100%;
@@ -212,13 +229,8 @@ nav {
   background: #555;
 }
 
-.footer {
-  background: #222;
-}
-
-.ingredients {
-  width: 360px;
-  margin: 1rem auto;
+#menu-desktop-view {
+  display: none;
 }
 
 .smoothie {
@@ -231,6 +243,21 @@ nav {
 .smoothie:hover {
   transform: translateY(-2px) scale(1.025);
   opacity: 1;
+}
+
+@media only screen and (min-width: 768px) {
+  #menu {
+    display: none;
+  }
+
+  #menu-desktop-view {
+    display: block;
+  }
+
+  .nav-item > a {
+    text-decoration: none;
+    color: #000;
+}
 }
 
 

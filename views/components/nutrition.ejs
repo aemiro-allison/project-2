@@ -2,10 +2,14 @@
 <div class="column add-margin-3y">
   <div class="row to-center">
     <div class="box">
-    <% for (let label in smoothie.nutrition) { %>
+    <% for (let label in data.smoothie.nutrition) { %>
       <div class="row">
         <span class="add-padding"><%= label %></span>
-        <input type="range" value="<%= smoothie.nutrition[label] %>" min="0" max="800" disabled>
+        <% if (label === 'prep_time') { %>
+          <span><%= data.smoothie.nutrition[label] %>mins</span>
+        <% } else { %>
+          <input id="<%= label %>" type="range" value="<%= data.smoothie.nutrition[label] %>" min="0" max="800" disabled>
+        <% } %>
       </div>
     <% } %>
     </div>

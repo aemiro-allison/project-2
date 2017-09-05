@@ -1,0 +1,40 @@
+<% include ../partials/header %>
+
+<!-- Heading -->
+<h1 class="row to-center text-to-center">User Profile</h1>
+
+<!-- User Info Pane -->
+<div class="container box add-margin-3y">
+  <div class="column">
+    <figure class="image">
+      <img src="https://cdn2.iconfinder.com/data/icons/happy-users/100/users05-512.png" alt="">
+    </figure>
+      <div class="row add-padding">
+        <span class="row-item">Name</span>
+        <span class="row-item"><%= data.user.name %></span>
+      </div>
+      <div class="row add-padding">
+        <span class="row-item">Date joined:</span>
+        <span class="row-item">August 31, 2017</span>
+      </div>
+      <div class="row add-padding">
+        <span class="row-item">Created Smoothies:</span>
+        <span class="row-item"><%= data.smoothies.length %></span>
+      </div>
+  </div>
+</div>
+
+<!-- Smoothies -->
+<div class="container box add-padding wrap">
+  <div class="row add-margin-2y">
+    <button>
+      <a href="/users/<%= data.user.user_id %>/smoothie/create">
+        NEW SMOOTHIE
+      </a>
+    </button>
+  </div>
+  <% include ../components/smoothies %>
+</div>
+
+<% include ../partials/footer %>
+

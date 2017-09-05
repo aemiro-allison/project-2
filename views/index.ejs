@@ -5,16 +5,21 @@
 
 <!-- Search icon -->
 <div class="row add-margin-2y add-padding to-center">
-  <button class="search-open">
-  <span>search</span>
-  <span class="icon">
-    <i class="fa fa-search"></i>
-  </span>
+  <form action="/smoothies/search" method="GET">
+    <div class="row add-margin-2y">
+      <input name="search" type="text" placeholder="<%= data.text ? data.text : 'Find a smoothie' %>" />
+      <button type="submit">
+      SEARCH
+      <span class="icon">
+        <i class="fa fa-search"></i>
+      </span>
   </button>
+    </div>
+  </form>
 </div>
 
 <div class="container box add-padding wrap">
-  <% include ./partials/smoothies %>
+  <% include ./components/smoothies %>
 </div>
 
 <% include ./partials/footer %>

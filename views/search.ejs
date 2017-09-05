@@ -1,0 +1,19 @@
+<% include ./partials/header %>
+
+<div class="to-fullheight column add-margin-3y">
+    <div class="column to-center add-margin-3y">
+      <form action="/smoothies/search" method="GET">
+        <div class="row add-margin-2y">
+          <input name="search" type="text" placeholder="<%= data.text ? data.text : 'Find a smoothie' %>" />
+          <button type="submit">SEARCH</button>
+        </div>
+      </form>
+    </div>
+
+  <div class="row wrap add-margin-3y to-middle">
+
+<% include ./components/smoothies %>
+
+</div>
+
+<% include ./partials/footer %>

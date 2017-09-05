@@ -3,21 +3,34 @@
 <div class="container add-margin-3y">
 
 <!-- Heading -->
-<h1 class="to-center text-to-center"><%= smoothie.title %></h1>
-<p class="text-to-center">made by <strong><%= smoothie.name %></strong> on 08/2017</p>
+<h1 class="to-center text-to-center"><%= data.smoothie.title %></h1>
+<p class="text-to-center">made by
+  <a href="/users/<%= data.smoothie.user_id %>">
+    <%= data.smoothie.name %>
+  </a>
+  on 08/2017
+</p>
+
+<% if (data.user) { %>
+<div class="row to-center">
+  <button>
+    <a href="/users/<%= data.smoothie.user_id %>/smoothie/edit/<%= data.smoothie.id %>">
+      EDIT
+    </a>
+  </button>
+  <button id="delete">DELETE</button>
+</div>
+<% } %>
 
 <% include ../components/nutrition %>
-<% include ../components/ingredients %>
 
-
-<div class="row to-center add-margin-2y">
-  <button class="ingredients-open">VIEW INGREDIENTS</button>
-</div>
 
 <!-- Image of Smoothie -->
 <figure class="image to-middle add-margin-3y">
   <img src="http://www.eatwell101.com/wp-content/uploads/2016/10/apple-banana-smoothie-recipes-.jpg" alt="">
 </figure>
+
+<% include ../components/ingredients %>
 
 <% include ../components/recipe %>
 

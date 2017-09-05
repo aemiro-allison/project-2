@@ -10,19 +10,45 @@
 </head>
 <script type="text/javascript">
   let data = {
-    ingredients: null,
+    user: <%- data.user? JSON.stringify(data.user) : "{}" %>,
+    smoothie: <%- data.smoothie? JSON.stringify(data.smoothie) : "{}" %>,
   };
 </script>
 <body>
 
-<!-- ALL HIDDEN VIEWS -->
-<div class="animated" id="menu-view"></div>
-<div class="animated" id="search-view"></div>
-<div class="animated" id="ingredients-view"></div>
+<!-- MENU HIDDEN VIEW - on mobile -->
+<div class="animated" id="menu-view">
+  <div class="row add-padding menu-close">
+    <span class="icon">
+      <i class="fa fa-close"></i>
+    </span>
+  </div>
 
-<!-- MENU -->
-<div class="row add-padding menu-open">
+  <div class="row to-fullheight to-center add-margin-2y">
+    <nav class="column to-center">
+      <li class="nav-item add-margin-2y"><a href="/smoothies">HOME</a></li>
+      <li class="nav-item add-margin-2y"><a href="/about.html">ABOUT</a></li>
+      <li class="nav-item add-margin-2y"><a href="/signup.html">SIGN UP</a></li>
+      <li class="nav-item add-margin-2y"><a href="/login.html">LOG IN</a></li>
+    </nav>
+  </div>
+</div>
+
+<!-- MENU - on mobile -->
+<div class="row add-padding menu-open" id="menu">
   <span class="icon">
     <i class="fa fa-navicon"></i>
   </span>
 </div>
+
+<!-- MENU VISIBLE - on desktop -->
+<div class="row" id="menu-desktop-view">
+  <nav class="row to-right add-padding">
+    <li class="nav-item add-margin-x add-padding"><a href="/smoothies">HOME</a></li>
+    <li class="nav-item add-margin-x add-padding"><a href="/about.html">ABOUT</a></li>
+    <li class="nav-item add-margin-x add-padding"><a href="/signup.html">SIGN UP</a></li>
+    <li class="nav-item add-margin-x add-padding"><a href="/login.html">LOG IN</a></li>
+  </nav>
+</div>
+
+<div class="container add-margin-3y">

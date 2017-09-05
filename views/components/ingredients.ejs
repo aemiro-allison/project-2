@@ -1,3 +1,66 @@
-<script type="text/javascript">
-  data.ingredients = <%- JSON.stringify(smoothie.ingredients) %>;
-</script>
+<% if (data.user && data.user.isLoggedIn)  {%>
+
+<!-- Ingredients Pane -->
+  <div class="box column">
+    <div class="row to-middle">
+      <form id="search-for-ingredient">
+        <div class="row add-margin-2y">
+          <input id="qty" type="number" value="1">
+          <input id="food-name" type="text" placeholder="Find a ingredient" />
+          <button type="submit">SEARCH</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Image of Ingredient -->
+  <figure class="image to-middle add-margin-3y">
+    <img id="ingredient-picture" src="http://www.eatwell101.com/wp-content/uploads/2016/10/apple-banana-smoothie-recipes-.jpg" alt="">
+  </figure>
+
+    <div class="column box ingredients">
+      <button onclick="addIngredient()" class="add-margin-y">ADD INGREDIENT</button>
+        <% Object.keys(data.smoothie? data.smoothie.ingredients : {}).map((key) => {%>
+          <div class="row">
+            <div>
+                <input type="number" value="<%= data.smoothie.ingredients[key].quantity %>" disabled>
+            </div>
+            <div class="row-item row">
+              <span class="add-padding"><%= key %></span>
+              <div class="to-right">
+                <span class="add-margin-x"><%= data.smoothie.ingredients[key].calories %>cal</span>
+                <span class="add-margin-x"><%= data.smoothie.ingredients[key].protein %>g</span>
+              </div>
+            </div>
+            <div onclick="clearIngredient('<%= key %>')">
+              <span class="icon">
+                <i class="fa fa-close"></i>
+              </span>
+            </div>
+          </div>
+        <% }) %>
+    </div>
+  </div>
+
+  <div class="row add-margin-3y"></div>
+
+  <% } else {%>
+    <div class="add-margin-3y">
+      <div class="column box ingredients">
+        <p class="title add-margin-y text-to-center">Ingredients</p>
+          <% Object.keys(data.smoothie.ingredients).map((key) => {%>
+            <div class="row">
+              <div>
+                  <input type="number" value="<%= data.smoothie.ingredients[key].quantity %>" disabled>
+              </div>
+              <div class="row-item row">
+                <span class="add-padding"><%= key %></span>
+                <div class="to-right">
+                  <span class="add-margin-x"><%= data.smoothie.ingredients[key].calories %>cal</span>
+                  <span class="add-margin-x"><%= data.smoothie.ingredients[key].protein %>g</span>
+                </div>
+              </div>
+            </div>
+          <% }) %>
+      </div>
+    </div>
+  <% } %>

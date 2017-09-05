@@ -31,6 +31,7 @@
     "express": "^4.15.4",
     "method-override": "^2.3.9",
     "morgan": "^1.8.2",
-    "pg-promise": "^6.5.1"
+    "pg-promise": "^6.5.1",
+    "superagent": "^3.6.0"
   }
 }

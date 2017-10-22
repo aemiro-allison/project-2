@@ -3,7 +3,7 @@ let $els = null;
 let ingredients = data.smoothie.ingredients || {};
 let tempIngredient = {};
 let tempIngredientName = null;
-let URL = data.URL || `http://localhost:3000`;
+const URL = data.URL ? 'https://agile-cliffs-12286.herokuapp.com' : 'http://localhost:3000';
 
 $(document).ready(() => {
   $els = {
